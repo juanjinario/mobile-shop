@@ -1,0 +1,19 @@
+@import "./vars.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $color-primary-500;
+    text-decoration: none;
+    transition: all 0.2s;
+    &:hover {
+        color: $color-accent-500;
+    }
+}

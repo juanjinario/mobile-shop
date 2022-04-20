@@ -1,9 +1,15 @@
 @import "./vars.scss";
+@import "./base.scss";
 
 body {
-  background: $color-body-background;
-  background-color: $color-primary-500;
+  background: $background-body;
   font-family: $font-primary;
-  margin: 0;
-  padding: 0;
+  font-size: $font-size;
+  color: $color-font;
+}
+
+.page-container {
+  margin: 0 auto;
+  max-width: $width-screen;
+  width: 100%;
 }

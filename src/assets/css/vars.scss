@@ -1,14 +1,26 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
 
-$font-primary: 'Montserrat', sans-serif;
-$color-body-background: #FAFAFA;
-$color-primary-50: #fde3e9;
-$color-primary-300: #F25D7F;
-$color-primary-500: #EC1848;
-$color-primary-700: #E71138;
-$color-primary-900: #DF0821;
+$background-body: #FAFAFA;
+$background-header: linear-gradient(90deg, #EC1848 0%, #B72366 100%);;
+
 $color-accent-50: #f6e5ed;
+$color-accent-100: #E9BDD1;
+$color-accent-200: #DB91B3;
 $color-accent-300: #CD6594;
 $color-accent-500: #B72366;
 $color-accent-700: #A71A53;
 $color-accent-900: #900C38;
+$color-font: #232323;
+$color-primary-50: #fde3e9;
+$color-primary-100: #F9BAC8;
+$color-primary-200: #F68CA4;
+$color-primary-300: #F25D7F;
+$color-primary-500: #EC1848;
+$color-primary-700: #E71138;
+$color-primary-900: #DF0821;
+
+$font-primary: 'Montserrat', sans-serif;
+$font-size: 15px;
+
+$width-screen: 1080px;
+$mobile-screen: 780px;

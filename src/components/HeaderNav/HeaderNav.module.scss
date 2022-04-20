@@ -1,0 +1,33 @@
+@import "./../../assets/css/vars.scss";
+
+.header-nav {
+    display: flex;
+    .menu-link {
+        border-bottom: 2px solid transparent;
+        color: #fff;
+        padding: 0.5rem 0;
+        &:hover {
+            border-bottom: 2px solid #fff;
+        }
+        & + .menu-link {
+            margin-left: 1rem;
+        }
+        i {
+            margin-right: 0.25rem;
+        }
+        .fire-icon {
+            color: #ecbc18;
+        }
+    }
+}
+
+@media (max-width: $mobile-screen) {
+    .menu-link {
+        &:hover {
+            border-bottom: 2px solid transparent;
+        }
+        span {
+            display: none;
+        }
+    }
+}
