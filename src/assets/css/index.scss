@@ -1,0 +1,9 @@
+@import "./vars.scss";
+
+body {
+  background: $color-body-background;
+  background-color: $color-primary-500;
+  font-family: $font-primary;
+  margin: 0;
+  padding: 0;
+}
