@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
-import HeaderNav from '../HeaderNav/HeaderNav';
+import HeaderNav from '../HeaderNav/HeaderNav.component';
 import HeaderUserOptions from '../HeaderUserOptions/HeaderUserOptions';
 import styles from './Header.module.scss';
 
-const Header = () => (
+const HeaderComponent = () => (
   <header className={styles.header} data-testid="Header">
     <div className={styles['header-row'] + ' page-container'}>
-      <h4 className={styles.logo}><i class="fa-solid fa-signal"></i>Mobile Shop</h4>
+      <h4 className={styles.logo}><i className="fa-solid fa-signal"></i>Mobile Shop</h4>
       <HeaderNav></HeaderNav>
       <HeaderUserOptions></HeaderUserOptions>
     </div>
   </header>
 );
 
-Header.propTypes = {};
+HeaderComponent.propTypes = {};
 
-Header.defaultProps = {};
+HeaderComponent.defaultProps = {};
 
-export default Header;
+export default HeaderComponent;

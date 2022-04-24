@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Header from './Header';
+import HeaderComponent from './Header';
 
 describe('<Header />', () => {
   test('it should mount', () => {
-    render(<Header />);
+    render(<HeaderComponent />);
     
     const header = screen.getByTestId('Header');
 
