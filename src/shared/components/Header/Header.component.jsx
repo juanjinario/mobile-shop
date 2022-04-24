@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import HeaderNav from '../HeaderNav/HeaderNav.component';
-import HeaderUserOptions from '../HeaderUserOptions/HeaderUserOptions';
-import styles from './Header.module.scss';
+import HeaderNav from '../header-nav/HeaderNav.component';
+import HeaderUserOptions from '../header-user-options/header-user-options.component';
+import styles from './header.module.scss';
 
 const HeaderComponent = () => (
   <header className={styles.header} data-testid="Header">

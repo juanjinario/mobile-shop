@@ -1,4 +1,4 @@
-import HeaderComponent from "../shared/components/Header/Header.component";
+import HeaderComponent from "../shared/components/header/header.component";
 
 
 function StoreApp() {

@@ -1,11 +1,11 @@
 {
   "usesTypeScript": false,
   "usesCssModule": true,
-  "cssPreprocessor": "css",
+  "cssPreprocessor": "scss",
   "testLibrary": "Testing Library",
   "component": {
     "default": {
-      "path": "src/components",
+      "path": "src/shared/components",
       "withStyle": true,
       "withTest": true,
       "withStory": false,

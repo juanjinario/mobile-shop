@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import HeaderUserOptions from './HeaderUserOptions';
+import HeaderUserOptions from './header-user-options.component';
 
 describe('<HeaderUserOptions />', () => {
   test('it should mount', () => {

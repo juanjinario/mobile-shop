@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './HeaderUserOptions.module.scss';
+import styles from './header-user-options.module.scss';
 
 const HeaderUserOptions = () => (
   <div className={styles['header-user-options']} data-testid="HeaderUserOptions">
