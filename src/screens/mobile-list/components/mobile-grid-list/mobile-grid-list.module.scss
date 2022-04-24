@@ -1,1 +1,31 @@
-.mobile-grid-list {}
+@import './../../../../style/vars.scss';
+
+.grid-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    .title-grid {
+        background: $background-page-title;
+        background-repeat: no-repeat;
+        background-size: 100% 44%;
+        background-position: 0 96%;
+        margin: 0;
+        padding: 0.25rem 0.5rem;
+    }
+    .search-wrapper {
+
+    }
+}
+
+.mobile-grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1.5rem 2rem;
+}
+
+@media (max-width: $mobile-screen) {
+    .mobile-grid-list {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+}

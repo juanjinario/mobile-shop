@@ -1,1 +1,79 @@
-.mobile-card {}
+@import './../../../../style/vars.scss';
+
+$background-card: #fff;
+
+.mobile-card {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    .img-wrapper {
+        background: $background-card;
+        border-radius: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 2px;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.2s;
+        width: 100%;
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.22) 1px 3px 6px;
+        }
+        .mobile-img {
+            height: 220px;
+        }
+    }
+    .card-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1rem;
+        margin: 0;
+        padding: 0.5rem 3rem 0.25rem 0.5rem;
+        position: relative;
+        width: 100%;
+        .title {
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .description {
+            font-size: 0.75rem;
+            opacity: 0.75;
+            padding-top: 0.25rem;
+        }
+        .price {
+            background: $color-card-gradient;
+            background-clip: text;
+            border-radius: 0.5rem;
+            bottom: 0.75rem;
+            color:$color-primary-700;
+            padding: 0.25rem 0.5rem;
+            position: absolute;
+            right: 0;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+@media (max-width: $mobile-screen) {
+    .mobile-card {
+        align-items: center;
+        flex-direction: row;
+        .card-text {
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+            .description {
+                padding-top: 1rem;
+            }
+            .price {
+                bottom: auto;
+                position: relative;
+                top: 1rem;
+            }
+        }
+        .img-wrapper {
+            .mobile-img {
+                height: 160px;
+            }
+        }
+    }
+}

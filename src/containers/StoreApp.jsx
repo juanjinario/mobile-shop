@@ -5,7 +5,9 @@ function StoreApp() {
   return (
     <>
       <HeaderComponent></HeaderComponent>
-      <AppRouter></AppRouter>
+      <div className="page-container">
+        <AppRouter></AppRouter>
+      </div>
     </>
   );
 }

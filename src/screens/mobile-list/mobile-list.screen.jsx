@@ -1,15 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './mobile-list.module.scss';
+import MobileGridListComponent from './components/mobile-grid-list/mobile-grid-list.component';
 
 const MobileListScreen = () => (
-  <div className={styles['mobile-list']} data-testid="mobile-list-screen">
-    Mobile-list Screen
+  <div className='page-content' data-testid="MobileListScreen">
+    <MobileGridListComponent></MobileGridListComponent>
   </div>
 );
-
-MobileListScreen.propTypes = {};
-
-MobileListScreen.defaultProps = {};
 
 export default MobileListScreen;
