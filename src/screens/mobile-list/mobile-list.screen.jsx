@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Mobile-list.module.scss';
+import styles from './mobile-list.module.scss';
 
 const MobileListScreen = () => (
   <div className={styles['mobile-list']} data-testid="mobile-list-screen">
