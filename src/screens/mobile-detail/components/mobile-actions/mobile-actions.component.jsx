@@ -2,46 +2,53 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./mobile-actions.module.scss";
 import { useNavigate } from "react-router-dom";
+import { addMobileToCart } from "../../../../core/services/cart.service";
 
 const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
   const [userSelection, setUserSelection] = useState({});
 
   useEffect(() => {
     setUserSelection({
-      color: colors?.[0].code,
+      colorCode: colors?.[0].code,
       mobileId: mobileId,
-      storage: storages?.[0].code,
+      storageCode: storages?.[0].code,
     });
-  }, [mobileId]);
+  }, [ mobileId ]);
 
   const onSelectColor = (colorSelected) => {
     setUserSelection((userSelection) => ({
       ...userSelection,
-      color: colorSelected.code,
+      colorCode: colorSelected.code,
     }));
   };
 
   const onSelectStorage = (storageSelected) => {
     setUserSelection((userSelection) => ({
       ...userSelection,
-      storage: storageSelected.code,
+      storageCode: storageSelected.code,
     }));
   };
 
   const onAddToCart = () => {
-    console.log(userSelection);
+    addMobileToCart({ ...userSelection }).then((result) => {
+      console.log(result);
+    });
   };
 
   return (
     <div className={styles["mobile-actions"]} data-testid="MobileCard">
       <div className={styles["row-action"]}>
         <div>
-          <b className={ styles["switcher-name"] } >Color</b>
-          <div className={ styles["switcher"] }>
+          <b className={styles["switcher-name"]}>Color</b>
+          <div className={styles["switcher"]}>
             {colors?.length &&
               colors.map((color, index) => (
                 <div
-                className={userSelection?.color === color.code ? `${styles['button-switch']} ${styles['active']}` : styles["button-switch"]}
+                  className={
+                    userSelection?.colorCode === color.code
+                      ? `${styles["button-switch"]} ${styles["active"]}`
+                      : styles["button-switch"]
+                  }
                   onClick={() => onSelectColor(color)}
                   key={color.code}
                 >
@@ -51,12 +58,16 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
           </div>
         </div>
         <div>
-          <b className={ styles["switcher-name"] }>Almacenamiento</b>
-          <div className={ styles["switcher"] }>
+          <b className={styles["switcher-name"]}>Almacenamiento</b>
+          <div className={styles["switcher"]}>
             {colors?.length &&
               storages.map((storage, index) => (
                 <div
-                  className={userSelection?.storage === storage.code ? `${styles['button-switch']} ${styles['active']}` : styles["button-switch"]}
+                  className={
+                    userSelection?.storageCode === storage.code
+                      ? `${styles["button-switch"]} ${styles["active"]}`
+                      : styles["button-switch"]
+                  }
                   onClick={() => onSelectStorage(storage)}
                   key={storage.code}
                 >
