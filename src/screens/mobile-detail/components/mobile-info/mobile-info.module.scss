@@ -4,8 +4,22 @@
     small {
         color: $color-clear-txt;
     }
-    .title {
+    .header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
         margin: 0 0 1.5rem;
+        h3 {
+            margin: 0;
+        }
+        .big-number {
+            background: $color-card-gradient;
+            background-clip: text;
+            border-radius: 0.5rem;
+            bottom: 0.75rem;
+            color:$color-primary-700;
+            font-size: 1.5rem;
+        }
     }
     .info-table {
         font-size: 0.7rem;

@@ -6,6 +6,10 @@ import { addMobileToCart } from "../../../../core/services/cart.service";
 
 const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
   const [userSelection, setUserSelection] = useState({});
+  const [productsAdded, productsAddedSelection] = useState({
+    count: 0,
+    showMessage: false
+  });
 
   useEffect(() => {
     setUserSelection({
@@ -31,17 +35,26 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
 
   const onAddToCart = () => {
     addMobileToCart({ ...userSelection }).then((result) => {
-      console.log(result);
+      productsAddedSelection({
+        count: result.count,
+        showMessage: true
+      });
+      setTimeout(() => {
+        productsAddedSelection({
+          count: result.count,
+          showMessage: false
+        });
+      }, 4000)
     });
   };
 
   return (
     <div className={styles["mobile-actions"]} data-testid="MobileCard">
-      <div className={styles["row-action"]}>
+      <div className={styles["row-selectors"]}>
         <div>
           <b className={styles["switcher-name"]}>Color</b>
           <div className={styles["switcher"]}>
-            {colors?.length &&
+            { colors?.length &&
               colors.map((color, index) => (
                 <div
                   className={
@@ -60,7 +73,7 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
         <div>
           <b className={styles["switcher-name"]}>Almacenamiento</b>
           <div className={styles["switcher"]}>
-            {colors?.length &&
+            { colors?.length &&
               storages.map((storage, index) => (
                 <div
                   className={
@@ -77,16 +90,21 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
           </div>
         </div>
       </div>
-      <div className={styles["row-action"]}>
-        <span className={styles["txt-big"]}>{price} €</span>
+      <div className={styles["row-main-button"]}>
         <button
           className={styles["btn-big"] + " btn-raised-primary"}
           onClick={onAddToCart}
         >
           <i className="fa-solid fa-cart-shopping"></i>
-          <span> Añadir</span>
+          <span> Añadir por { price } €</span>
         </button>
       </div>
+      {
+        productsAdded.count > 0 && productsAdded.showMessage && 
+          <div className="alert-success">
+            Producto añadido al carrito de compras
+          </div>
+      }
     </div>
   );
 };

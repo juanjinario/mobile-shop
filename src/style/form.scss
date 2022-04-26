@@ -1,5 +1,21 @@
 @import "./vars.scss";
 
+.alert,
+.alert-danger,
+.alert-success {
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.25rem;
+    position: relative;
+}
+
+.alert-success {
+    background-color: $color-success-100;
+    border-color: $color-success-500;
+    color: $color-success-500;
+}
+
 .btn-raised-primary,
 .btn-raised-accent {
     border: 0;
