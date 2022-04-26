@@ -1,1 +1,40 @@
-.mobile-detail {}
+@import './../../style/vars.scss';
+
+.title-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    .title-page {
+        background: $background-page-title;
+        background-repeat: no-repeat;
+        background-size: 100% 44%;
+        background-position: 0 96%;
+        margin: 0;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+.mobile-detail {
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    .img-wrapper {
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 2rem 3rem;
+    }
+    .detail-wrapper {
+        background: #fff;
+        border-radius: 0.5rem;
+        margin-left: 2rem;
+        padding: 1rem;
+        width: 40%;
+        .info {
+
+        }
+        .actions {
+
+        }
+    }
+}

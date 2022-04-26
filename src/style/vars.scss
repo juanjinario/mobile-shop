@@ -3,6 +3,8 @@
 $background-body: #f5f6f9;
 $background-header: linear-gradient(90deg, #EC1848 0%, #B72366 100%);
 $background-page-title: linear-gradient(120deg,#E9BDD1,#E9BDD1);
+$bg-btn-raised-primary: linear-gradient(60deg, #EC1848 0%, #E71138 100%);
+$bg-btn-raised-primary-hover: linear-gradient(60deg, #E71138 0%, #B72366 100%);
 
 $color-accent-50: #f6e5ed;
 $color-accent-100: #E9BDD1;
@@ -12,6 +14,7 @@ $color-accent-500: #B72366;
 $color-accent-700: #A71A53;
 $color-accent-900: #900C38;
 $color-card-gradient: linear-gradient(60deg, #B72366, #EC1848);
+$color-clear-txt: rgba(0,0,0,0.49);
 $color-font: #232323;
 $color-primary-50: #fde3e9;
 $color-primary-100: #F9BAC8;

@@ -3,6 +3,7 @@
 .grid-header {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 1.5rem;
     .title-grid {
@@ -14,7 +15,22 @@
         padding: 0.25rem 0.5rem;
     }
     .search-wrapper {
-
+        max-width: 400px;
+        width: 100%;
+        position: relative;
+        .searchText {
+            display: block;
+            height: 2rem;
+            padding: 0.2rem 3rem 0.2rem 0.5rem;
+            width: 100%;
+        }
+        .btn-search {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            height: 2rem;
+            position: absolute;
+            right: 0;
+        }
     }
 }
 
@@ -25,6 +41,13 @@
 }
 
 @media (max-width: $mobile-screen) {
+    .grid-header {
+        .search-wrapper {
+            margin-top: 1rem;
+            max-width: none;
+        }
+    }
+
     .mobile-grid-list {
         grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     }

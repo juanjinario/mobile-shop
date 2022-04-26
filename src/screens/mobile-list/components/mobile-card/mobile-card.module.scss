@@ -13,10 +13,10 @@ $background-card: #fff;
         box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 2px;
         padding: 1rem;
         text-align: center;
-        transition: all 0.2s;
+        transition: all 180ms;
         width: 100%;
         &:hover {
-            box-shadow: rgba(0, 0, 0, 0.22) 1px 3px 6px;
+            box-shadow: rgba(0, 0, 0, 0.22) 1px 1px 6px;
         }
         .mobile-img {
             height: 220px;

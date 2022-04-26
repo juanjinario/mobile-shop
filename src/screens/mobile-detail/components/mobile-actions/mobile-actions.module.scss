@@ -1,0 +1,51 @@
+@import './../../../../style/vars.scss';
+
+.mobile-actions {
+    .row-action {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-evenly;
+        margin: 1rem 0 1.5rem;
+        .txt-big{
+            font-size: 1.25rem;
+            flex: 1 0 auto;
+        }
+        .btn-big {
+            width: 50%;
+            transition: all 0.15s;
+            &:hover {
+                span {
+                    display: inline-block;
+                }
+            }
+            span {
+                display: none;
+                padding-left: 0.5rem;
+            }
+        }
+    }
+    .switcher-name {
+        display: inline-block;
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+    .switcher {
+        display: flex;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        .button-switch {
+            border: 1px solid $color-clear-txt;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: inline-block;
+            padding: 0.25rem;
+            &.active {
+                background-color: $color-primary-50;
+                border: 1px solid $color-primary-500;
+                color: $color-primary-500;
+            }
+        }
+    }
+}
