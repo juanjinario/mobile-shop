@@ -4,11 +4,11 @@ import styles from "./mobile-actions.module.scss";
 import { useNavigate } from "react-router-dom";
 import { addMobileToCart } from "../../../../core/services/cart.service";
 
-const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
+const MobileActionsComponent = ({ mobileId, colors, storages, price = "" }) => {
   const [userSelection, setUserSelection] = useState({});
   const [productsAdded, productsAddedSelection] = useState({
     count: 0,
-    showMessage: false
+    showMessage: false,
   });
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
       mobileId: mobileId,
       storageCode: storages?.[0].code,
     });
-  }, [ mobileId ]);
+  }, [mobileId]);
 
   const onSelectColor = (colorSelected) => {
     setUserSelection((userSelection) => ({
@@ -37,14 +37,14 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
     addMobileToCart({ ...userSelection }).then((result) => {
       productsAddedSelection({
         count: result.count,
-        showMessage: true
+        showMessage: true,
       });
       setTimeout(() => {
         productsAddedSelection({
           count: result.count,
-          showMessage: false
+          showMessage: false,
         });
-      }, 4000)
+      }, 4000);
     });
   };
 
@@ -54,7 +54,7 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
         <div>
           <b className={styles["switcher-name"]}>Color</b>
           <div className={styles["switcher"]}>
-            { colors?.length &&
+            {colors?.length &&
               colors.map((color, index) => (
                 <div
                   className={
@@ -73,7 +73,7 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
         <div>
           <b className={styles["switcher-name"]}>Almacenamiento</b>
           <div className={styles["switcher"]}>
-            { colors?.length &&
+            {colors?.length &&
               storages.map((storage, index) => (
                 <div
                   className={
@@ -93,18 +93,24 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price }) => {
       <div className={styles["row-main-button"]}>
         <button
           className={styles["btn-big"] + " btn-raised-primary"}
+          disabled={price === "" || price <= 0}
           onClick={onAddToCart}
         >
-          <i className="fa-solid fa-cart-shopping"></i>
-          <span> Añadir por { price } €</span>
+          {price !== "" ? (
+            <>
+              <i className="fa-solid fa-cart-shopping"></i>
+              <span> Añadir por {price} €</span>
+            </>
+          ) : (
+            "Producto sin precio"
+          )}
         </button>
       </div>
-      {
-        productsAdded.count > 0 && productsAdded.showMessage && 
-          <div className="alert-success">
-            Producto añadido al carrito de compras
-          </div>
-      }
+      {productsAdded.count > 0 && productsAdded.showMessage && (
+        <div className="alert-success">
+          Producto añadido al carrito de compras
+        </div>
+      )}
     </div>
   );
 };
