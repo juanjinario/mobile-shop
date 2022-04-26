@@ -18,6 +18,7 @@
 .mobile-detail {
     align-items: flex-start;
     display: flex;
+    gap: 2rem;
     justify-content: center;
     .img-wrapper {
         background: #fff;
@@ -27,7 +28,6 @@
     .detail-wrapper {
         background: #fff;
         border-radius: 0.5rem;
-        margin-left: 2rem;
         padding: 1rem;
         width: 40%;
         .info {
@@ -35,6 +35,16 @@
         }
         .actions {
 
+        }
+    }
+}
+
+@media (max-width: $mobile-screen) {
+    .mobile-detail {
+        align-items: center;
+        flex-direction: column;
+        .detail-wrapper {
+            width: 100%;
         }
     }
 }

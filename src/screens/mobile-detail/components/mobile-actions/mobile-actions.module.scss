@@ -49,3 +49,18 @@
         }
     }
 }
+
+@media (max-width: $mobile-screen) {
+    .mobile-actions {
+        .row-main-button {
+            margin: 1.5rem 0 1.25rem;
+            width: 100%;
+            .btn-big {
+                width: 100%;
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
