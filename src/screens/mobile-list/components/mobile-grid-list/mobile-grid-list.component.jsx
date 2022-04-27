@@ -5,34 +5,39 @@ import MobileCardComponent from "../mobile-card/mobile-card.component";
 
 const MobileGridListComponent = () => {
   const [mobileList, setMobileList] = useState([]);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     getMobileList({});
   }, []);
 
-  const getMobileList = ({ searchText = '' }) => {
+  const getMobileList = ({ searchText = "" }) => {
     getAllMobiles({ searchText }).then((mobileList) => {
       setMobileList(mobileList);
     });
   };
 
-  const getFilteredMobiles = () => {    
+  const getFilteredMobiles = () => {
     getMobileList({ searchText });
   };
 
   const onChangeSearchText = (e) => {
     setSearchText(e.target.value);
-  }
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
       <div className={styles["grid-header"]}>
         <h2 className={styles["title-grid"]}>#ElMóvilQueQuieres</h2>
-        <div className={styles["search-wrapper"]}>
+        <form className={styles["search-wrapper"]} onSubmit={ onSubmit }>
           <button
             className={styles["btn-search"] + " btn-raised-primary"}
             onClick={getFilteredMobiles}
+            type="submit"
           >
             <i className="fa-solid fa-search"></i>
           </button>
@@ -42,9 +47,9 @@ const MobileGridListComponent = () => {
             placeholder="Escribe Acer..."
             type="text"
             value={searchText}
-            onChange={ onChangeSearchText }
+            onChange={onChangeSearchText}
           ></input>
-        </div>
+        </form>
       </div>
       <div
         className={styles["mobile-grid-list"]}
