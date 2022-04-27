@@ -5,7 +5,6 @@ const base = `https://front-test-api.herokuapp.com/api/product/`;
 export const getAllMobiles = async ({ searchText = '' }) => {
     const keyStorage = 'allMobiles';
     let mobileList = getStorage({ key: keyStorage });
-    console.log(mobileList);
     if (!mobileList) {
         const url = `${ base }`;
         const request = await fetch(url);
@@ -16,9 +15,13 @@ export const getAllMobiles = async ({ searchText = '' }) => {
 }
 
 export const getMobileById = async ({ mobileId }) => {
-    const keyStorage = mobileId;
-    const url = `${ base }${ mobileId }`;
-    const request = await fetch(url);
-    const data = await request.json();
-    return data;
+    const keyStorage = `mobile-${ mobileId }`;
+    let mobile = getStorage({ key: keyStorage });
+    if (!mobile) {
+        const url = `${ base }${ mobileId }`;
+        const request = await fetch(url);
+        mobile = await request.json();
+        setStorage({ key: keyStorage, value: mobile });
+    }
+    return mobile;
 }
