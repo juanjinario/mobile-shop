@@ -92,14 +92,14 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price = "" }) => {
       </div>
       <div className={styles["row-main-button"]}>
         <button
-          className={styles["btn-big"] + " btn-raised-primary"}
+          className={`${styles["btn-big"]} btn-raised-primary animate__animated animate__zoomIn animate__faster`}
           disabled={price === "" || price <= 0}
           onClick={onAddToCart}
         >
           {price !== "" ? (
             <>
               <i className="fa-solid fa-cart-shopping"></i>
-              <span> Añadir por {price} €</span>
+              <span className="animate__animated animate__fadeInRight"> Añadir por {price} €</span>
             </>
           ) : (
             "Producto sin precio"
@@ -107,7 +107,7 @@ const MobileActionsComponent = ({ mobileId, colors, storages, price = "" }) => {
         </button>
       </div>
       {productsAdded.count > 0 && productsAdded.showMessage && (
-        <div className="alert-success">
+        <div className="alert-success animate__animated animate__fadeInDown">
           Producto añadido al carrito de compras
         </div>
       )}

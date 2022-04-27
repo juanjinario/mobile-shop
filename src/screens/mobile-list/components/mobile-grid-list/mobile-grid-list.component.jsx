@@ -33,7 +33,7 @@ const MobileGridListComponent = () => {
     <>
       <div className={styles["grid-header"]}>
         <h2 className={styles["title-grid"]}>#ElMóvilQueQuieres</h2>
-        <form className={styles["search-wrapper"]} onSubmit={ onSubmit }>
+        <form className={`${ styles["search-wrapper"] } animate__animated animate__fadeIn`} onSubmit={ onSubmit }>
           <button
             className={styles["btn-search"] + " btn-raised-primary"}
             onClick={getFilteredMobiles}
@@ -52,7 +52,7 @@ const MobileGridListComponent = () => {
         </form>
       </div>
       <div
-        className={styles["mobile-grid-list"]}
+        className={ `${styles["mobile-grid-list"]} animate__animated animate__fadeIn` }
         data-testid="mobile-grid-list"
       >
         {mobileList.map((mobile) => (

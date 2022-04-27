@@ -10,7 +10,7 @@ const MobileCardComponent = ({ brand, id, imgUrl, model, price }) => {
   }
   return (
     <div className={styles['mobile-card']} data-testid="MobileCard" onClick={ onClickCard }>
-      <div className={styles['img-wrapper']}>
+      <div className={ `${styles['img-wrapper']}`}>
         <img alt={ model } className={styles['mobile-img']} data-testid="MobileCardImg" src={ imgUrl }></img>
       </div>
       <p className={styles['card-text']}>
