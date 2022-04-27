@@ -5,32 +5,57 @@ import MobileCardComponent from "../mobile-card/mobile-card.component";
 
 const MobileGridListComponent = () => {
   const [mobileList, setMobileList] = useState([]);
-  const searchText = "";
+  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
+    getMobileList({});
+  }, []);
+
+  const getMobileList = ({ searchText = '' }) => {
     getAllMobiles({ searchText }).then((mobileList) => {
       setMobileList(mobileList);
     });
-  }, []);
+  };
+
+  const getFilteredMobiles = () => {    
+    getMobileList({ searchText });
+  };
+
+  const onChangeSearchText = (e) => {
+    setSearchText(e.target.value);
+  }
 
   return (
     <>
       <div className={styles["grid-header"]}>
         <h2 className={styles["title-grid"]}>#ElMóvilQueQuieres</h2>
         <div className={styles["search-wrapper"]}>
-          <button className={styles["btn-search"] + ' btn-raised-primary'}><i className="fa-solid fa-search"></i></button>
-          <input className={styles["searchText"]} name="searchText" placeholder="Escribe Acer..." type="text"></input>
+          <button
+            className={styles["btn-search"] + " btn-raised-primary"}
+            onClick={getFilteredMobiles}
+          >
+            <i className="fa-solid fa-search"></i>
+          </button>
+          <input
+            className={styles["searchText"]}
+            name="searchText"
+            placeholder="Escribe Acer..."
+            type="text"
+            value={searchText}
+            onChange={ onChangeSearchText }
+          ></input>
         </div>
       </div>
       <div
         className={styles["mobile-grid-list"]}
         data-testid="mobile-grid-list"
       >
-        {
-          mobileList.map( mobile => (
-            <MobileCardComponent key={ mobile.id } {...mobile}></MobileCardComponent>
-          ))
-        }
+        {mobileList.map((mobile) => (
+          <MobileCardComponent
+            key={mobile.id}
+            {...mobile}
+          ></MobileCardComponent>
+        ))}
       </div>
     </>
   );
