@@ -7,6 +7,9 @@ $background-card: #fff;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    flex-basis: 25%;
+    max-width: 25%;
+    padding: 0.75rem 1rem;
     .img-wrapper {
         background: $background-card;
         border-radius: 0.5rem;
@@ -19,7 +22,7 @@ $background-card: #fff;
             box-shadow: rgba(0, 0, 0, 0.22) 1px 1px 6px;
         }
         .mobile-img {
-            height: 220px;
+            width: 100%;
         }
     }
     .card-text {
@@ -56,7 +59,9 @@ $background-card: #fff;
 @media (max-width: $mobile-screen) {
     .mobile-card {
         align-items: center;
+        flex-basis: 50%;
         flex-direction: row;
+        max-width: 50%;
         .card-text {
             padding: 1rem;
             text-align: center;
@@ -68,11 +73,6 @@ $background-card: #fff;
                 bottom: auto;
                 position: relative;
                 top: 1rem;
-            }
-        }
-        .img-wrapper {
-            .mobile-img {
-                height: 160px;
             }
         }
     }

@@ -35,9 +35,9 @@
 }
 
 .mobile-grid-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem -1rem;
 }
 
 @media (max-width: $mobile-screen) {
@@ -46,9 +46,5 @@
             margin-top: 1rem;
             max-width: none;
         }
-    }
-
-    .mobile-grid-list {
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     }
 }
