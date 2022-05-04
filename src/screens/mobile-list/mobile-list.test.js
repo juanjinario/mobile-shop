@@ -1,6 +1,4 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from "@testing-library/react";
 import MobileListScreen from './mobile-list.screen';
 
 describe('<mobile-list-screen />', () => {
@@ -17,6 +15,6 @@ describe('<mobile-list-screen />', () => {
     initRender();
     const mobileList = screen.getByTestId('mobile-list-screen');
     const mobileListGrid = screen.getByTestId('mobile-grid-list');
-    expect(mobileListGrid).toContainElement(mobileListGrid);
+    expect(mobileList).toContainElement(mobileListGrid);
   });
 });
